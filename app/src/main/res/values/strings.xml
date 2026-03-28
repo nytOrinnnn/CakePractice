@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">prac</string>
+    <string name="landingLogo">CaKe IT!</string>
+    <string name="welcomeText">WELCOME!</string>
+    <string name="selectNotice">CUSTOMIZE YOUR CAKE</string>
+    <string name="btnStart">START</string>
+</resources>
