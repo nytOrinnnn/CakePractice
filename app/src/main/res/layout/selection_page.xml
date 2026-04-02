@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/cream">
 
 
     <TextView
@@ -16,7 +17,8 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.035" />
+        app:layout_constraintVertical_bias="0.035"
+        android:textColor="@color/fonts"/>
 
     <ImageView
         android:visibility="gone"
@@ -144,7 +146,8 @@
                 android:text="SELECT FLAVOR"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/fonts"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -184,7 +187,8 @@
                 android:text="SELECT SIZE"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/fonts"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -205,21 +209,24 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20sp"
-                        android:text="SMALL" />
+                        android:text="SMALL"
+                        android:textColor="@color/fonts"/>
 
                     <RadioButton
                         android:id="@+id/sizeM"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20sp"
-                        android:text="MEDIUM" />
+                        android:text="MEDIUM"
+                        android:textColor="@color/fonts"/>
 
                     <RadioButton
                         android:id="@+id/sizeL"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20sp"
-                        android:text="LARGE" />
+                        android:text="LARGE"
+                        android:textColor="@color/fonts"/>
                 </RadioGroup>
 
             </LinearLayout>
@@ -231,7 +238,8 @@
                 android:text="SELECT Icing"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/fonts"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -252,21 +260,24 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20sp"
-                        android:text="Buttercream" />
+                        android:text="Buttercream"
+                        android:textColor="@color/fonts"/>
 
                     <RadioButton
                         android:id="@+id/chocoGanache"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20sp"
-                        android:text="Chocolate Genache " />
+                        android:text="Chocolate Genache "
+                        android:textColor="@color/fonts"/>
 
                     <RadioButton
                         android:id="@+id/creamC"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20sp"
-                        android:text="Cream Cheese" />
+                        android:text="Cream Cheese"
+                        android:textColor="@color/fonts"/>
                 </RadioGroup>
 
             </LinearLayout>
@@ -278,7 +289,8 @@
                 android:text="SELECT TOPPINGS"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/fonts"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -292,21 +304,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20sp"
-                    android:text="FRUITS" />
+                    android:text="FRUITS"
+                    android:textColor="@color/fonts"/>
 
                 <CheckBox
                     android:id="@+id/Sprinkles"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20sp"
-                    android:text="SPRINKLES" />
+                    android:text="SPRINKLES"
+                    android:textColor="@color/fonts"/>
 
                 <CheckBox
                     android:id="@+id/ChocoChips"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20sp"
-                    android:text="CHOCO CHIPS" />
+                    android:text="CHOCO CHIPS"
+                    android:textColor="@color/fonts"/>
 
 
             </LinearLayout>
@@ -318,7 +333,8 @@
                 android:text="ADD MESSAGE"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/fonts"/>
 
             <EditText
                 android:id="@+id/addMess"
@@ -326,7 +342,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="ADD MESSAGE"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="@color/fonts"/>
 
 
         </LinearLayout>
@@ -346,7 +363,8 @@
         app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.069" />
+        app:layout_constraintVertical_bias="0.069"
+        android:textColor="@color/fonts"/>
 
     <Button
         android:id="@+id/btnConfirm"

@@ -122,13 +122,6 @@ public class SelectionPage extends MainActivity{
         startActivity(intent);
     });
 
-
-
-
-
-
-
-
     }
 
     public void totalUpdater(){
