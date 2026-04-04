@@ -15,23 +15,28 @@ import java.util.ArrayList;
 
 public class SelectionPage extends MainActivity{
 
- final int chocolate = 120;
- final int vanilla = 100;
- final int straw = 150;
+    final int chocolate = 120;
+    final int vanilla = 100;
+    final int straw = 150;
 
- Button btnConfirm;
+    Button btnConfirm;
 
- TextView totalView;
+    TextView totalView;
 
- RadioGroup sizesOption, icingOption;
- CheckBox Fruits, Sprinkles, ChocoChips;
- ImageView imageView, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, btnVanilla, btnChoco, btnStraw;
+    RadioGroup sizesOption, icingOption;
+    CheckBox Fruits, Sprinkles, ChocoChips;
+    ImageView imageView, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, btnVanilla, btnChoco, btnStraw;
 
- EditText addMess;
+    EditText addMess;
 
- String summary = "";
+    String summary = "";
+    int selectedFlavor;
+    int selectedTopping1;
+    int selectedTopping2;
+    int selectedTopping3;
+    int selectedIcing;
 
- int base = 0;
+    int base = 0;
 
 
 
@@ -40,26 +45,26 @@ public class SelectionPage extends MainActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selection_page);
 
-    btnConfirm = findViewById(R.id.btnConfirm);
-    btnVanilla = findViewById(R.id.btnVanilla);
-    btnChoco = findViewById(R.id.btnChoco);
-    btnStraw = findViewById(R.id.btnStraw);
-    sizesOption = findViewById(R.id.sizesOption);
-    icingOption = findViewById(R.id.icingOptions);
-    Fruits = findViewById(R.id.Fruits);
-    Sprinkles = findViewById(R.id.Sprinkles);
-    ChocoChips = findViewById(R.id.ChocoChips);
-    totalView = findViewById(R.id.totalView);
-    addMess = findViewById(R.id.addMess);
-    imageView = findViewById(R.id.imageView);
-    imageView2 = findViewById(R.id.imageView2);
-    imageView3 = findViewById(R.id.imageView3);
-    imageView4 = findViewById(R.id.imageView4);
-    imageView5 = findViewById(R.id.imageView5);
-    imageView6 = findViewById(R.id.imageView6);
-    imageView7 = findViewById(R.id.imageView7);
-    imageView8 = findViewById(R.id.imageView8);
-    imageView9 = findViewById(R.id.imageView9);
+        btnConfirm = findViewById(R.id.btnConfirm);
+        btnVanilla = findViewById(R.id.btnVanilla);
+        btnChoco = findViewById(R.id.btnChoco);
+        btnStraw = findViewById(R.id.btnStraw);
+        sizesOption = findViewById(R.id.sizesOption);
+        icingOption = findViewById(R.id.icingOptions);
+        Fruits = findViewById(R.id.Fruits);
+        Sprinkles = findViewById(R.id.Sprinkles);
+        ChocoChips = findViewById(R.id.ChocoChips);
+        totalView = findViewById(R.id.totalView);
+        addMess = findViewById(R.id.addMess);
+        imageView = findViewById(R.id.imageView);
+        imageView2 = findViewById(R.id.imageView2);
+        imageView3 = findViewById(R.id.imageView3);
+        imageView4 = findViewById(R.id.imageView4);
+        imageView5 = findViewById(R.id.imageView5);
+        imageView6 = findViewById(R.id.imageView6);
+        imageView7 = findViewById(R.id.imageView7);
+        imageView8 = findViewById(R.id.imageView8);
+        imageView9 = findViewById(R.id.imageView9);
 
 
 
@@ -71,62 +76,71 @@ public class SelectionPage extends MainActivity{
         btnVanilla.setOnClickListener(view -> {
             base = vanilla;
             summary += "Flavor: Vanilla \n";
-
             imageView.setVisibility(View.VISIBLE);
             imageView2.setVisibility(View.GONE);
             imageView3.setVisibility(View.GONE);
+            selectedFlavor = R.drawable.picture1;
             totalUpdater();
 
-    });
-    btnChoco.setOnClickListener(view -> {
-        base = chocolate;
-        summary += "Flavor: Chocolate \n";
-        imageView.setVisibility(View.GONE);
-        imageView2.setVisibility(View.GONE);
-        imageView3.setVisibility(View.VISIBLE);
-        totalUpdater();
-    });
+        });
+        btnChoco.setOnClickListener(view -> {
+            base = chocolate;
+            summary += "Flavor: Chocolate \n";
+            imageView.setVisibility(View.GONE);
+            imageView2.setVisibility(View.GONE);
+            imageView3.setVisibility(View.VISIBLE);
+            selectedFlavor = R.drawable.picture3;
+            totalUpdater();
+        });
 
-    btnStraw.setOnClickListener(view -> {
-        base = straw;
+        btnStraw.setOnClickListener(view -> {
+            base = straw;
 
-        summary += "Flavor: Strawberry \n";
-        imageView.setVisibility(View.GONE);
-        imageView2.setVisibility(View.VISIBLE);
-        imageView3.setVisibility(View.GONE);
-        totalUpdater();
+            summary += "Flavor: Strawberry \n";
+            imageView.setVisibility(View.GONE);
+            imageView2.setVisibility(View.VISIBLE);
+            imageView3.setVisibility(View.GONE);
+            selectedFlavor = R.drawable.picture2;
+            totalUpdater();
 
-    });
-
-
-    sizesOption.setOnCheckedChangeListener((radioGroup, i) -> totalUpdater());
-    icingOption.setOnCheckedChangeListener((radioGroup, i) -> totalUpdater());
+        });
 
 
-    Fruits.setOnClickListener(view -> {
-        totalUpdater();
-    });
-
-    Sprinkles.setOnClickListener(view -> {
-        totalUpdater();
-    });
-
-    ChocoChips.setOnClickListener(view -> {
-        totalUpdater();
-    });
+        sizesOption.setOnCheckedChangeListener((radioGroup, i) -> totalUpdater());
+        icingOption.setOnCheckedChangeListener((radioGroup, i) -> totalUpdater());
 
 
-    btnConfirm.setOnClickListener(view -> {
-        Intent intent = new Intent(SelectionPage.this, Result.class);
-        intent.putExtra("SUMMARY", summary);
-        startActivity(intent);
-    });
+        Fruits.setOnClickListener(view -> {
+            totalUpdater();
+        });
+
+        Sprinkles.setOnClickListener(view -> {
+            totalUpdater();
+        });
+
+        ChocoChips.setOnClickListener(view -> {
+            totalUpdater();
+        });
+
+
+        btnConfirm.setOnClickListener(view -> {
+            Intent intent = new Intent(SelectionPage.this, Result.class);
+            intent.putExtra("SUMMARY", summary);
+            intent.putExtra("FLAVOR", selectedFlavor);
+            intent.putExtra("ICING", selectedIcing);
+            intent.putExtra("TOPPING1", selectedTopping1);
+            intent.putExtra("TOPPING2", selectedTopping2);
+            intent.putExtra("TOPPING3", selectedTopping3);
+
+            startActivity(intent);
+        });
 
     }
 
     public void totalUpdater(){
         summary = "";
         int total = base;
+
 
 
 
@@ -152,6 +166,7 @@ public class SelectionPage extends MainActivity{
             imageView4.setVisibility(View.VISIBLE);
             imageView6.setVisibility(View.GONE);
             imageView5.setVisibility(View.GONE);
+            selectedIcing = R.drawable.picture4;
 
 
         } else if(icings == R.id.chocoGanache){
@@ -160,6 +175,7 @@ public class SelectionPage extends MainActivity{
             imageView6.setVisibility(View.VISIBLE);
             imageView4.setVisibility(View.GONE);
             imageView5.setVisibility(View.GONE);
+            selectedIcing = R.drawable.picture6;
 
         } else if (icings == R.id.creamC) {
             total += 100;
@@ -167,6 +183,8 @@ public class SelectionPage extends MainActivity{
             imageView5.setVisibility(View.VISIBLE);
             imageView4.setVisibility(View.GONE);
             imageView6.setVisibility(View.GONE);
+            selectedIcing = R.drawable.picture5;
+
 
         }
 
@@ -174,6 +192,8 @@ public class SelectionPage extends MainActivity{
             total +=120;
             summary += "ADD-0N: Fruits \n";
             imageView7.setVisibility(View.VISIBLE);
+            selectedTopping1 = R.drawable.picture7;
+
         } else if(!Fruits.isChecked()){
             imageView7.setVisibility(View.GONE);
         }
@@ -182,6 +202,8 @@ public class SelectionPage extends MainActivity{
             total +=70;
             summary += "ADD-0N: Chocolate Chips \n";
             imageView8.setVisibility(View.VISIBLE);
+            selectedTopping2 = R.drawable.picture8;
+
         } else if(!ChocoChips.isChecked()){
             imageView8.setVisibility(View.GONE);
         }
@@ -190,6 +212,8 @@ public class SelectionPage extends MainActivity{
             total +=50;
             summary += "ADD-0N: Sprinkles \n";
             imageView9.setVisibility(View.VISIBLE);
+            selectedTopping3 = R.drawable.picture9;
+
         } else if(!Sprinkles.isChecked()){
             imageView9.setVisibility(View.GONE);
         }
